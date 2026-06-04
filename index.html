@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>西双版纳 · 热带雨林漫游记</title>
+<style>
+:root {
+  --bn-green: #2E8B57; --bn-gold: #DAA520; --bn-orange: #E8722A;
+  --bn-cream: #FFFDF5; --bn-beige: #FFFBF0; --bn-pink-bg: #FFF5F0;
+  --bn-blue-bg: #F0F8FF; --bn-dark: #1A3C2A; --bn-teal: #20B2AA;
+  --bn-blue: #4A90D9; --bn-border: #D4C8A0; --bn-white: #FFFFFF;
+  --bn-gray: #888;
+  --shadow-sm: 2px 2px 0 rgba(0,0,0,0.06);
+  --shadow-md: 3px 3px 0 rgba(0,0,0,0.06);
+  --shadow-hover: 6px 8px 0 rgba(0,0,0,0.06);
+  --radius-sm: 12px; --radius-md: 16px; --radius-lg: 20px; --radius-full: 50px;
+  --font-display: 'ZCOOL KuaiLe',cursive;
+  --font-body: 'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { font-family:var(--font-body); background:var(--bn-cream); color:var(--bn-dark); overflow-x:hidden; line-height:1.5; }
+
+/* ── Mini Nav ── */
+#miniNav {
+  position:fixed; top:0; left:0; right:0; z-index:998; background:rgba(255,255,255,0.95);
+  backdrop-filter:blur(8px); padding:0.5rem 1rem; display:flex; justify-content:center;
+  gap:0.5rem; box-shadow:0 2px 12px rgba(0,0,0,0.06); transform:translateY(-100%);
+  transition:transform 0.3s; flex-wrap:wrap;
+}
+#miniNav a {
+  text-decoration:none; padding:0.55rem 0.9rem; border-radius:50px;
+  font-size:0.8rem; font-weight:700; white-space:nowrap;
+  display:inline-flex; align-items:center; min-height:40px;
+}
+
+/* ── Hero ── */
+.hero {
+  min-height:auto; display:flex; flex-direction:column; align-items:center;
+  justify-content:center; position:relative; overflow:hidden; padding:0;
+  background:#FFF8E7;
+}
+.hero-sky {
+  position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; z-index:0;
+}
+.hero .dot-bg {
+  position:absolute; inset:0; opacity:0.06; pointer-events:none;
+  background-image:radial-gradient(circle,var(--bn-gold) 1.5px,transparent 1.5px),
+    radial-gradient(circle,var(--bn-orange) 1.5px,transparent 1.5px);
+  background-size:30px 30px, 50px 50px; background-position:0 0, 15px 15px;
+}
+.hero-content {
+  position:relative; z-index:1; width:100%; max-width:900px; margin:0 auto;
+  padding: 3rem 1.5rem 2rem; text-align:center;
+}
+.hero h1 {
+  font-family:var(--font-display); font-size:2.8rem; color:#fff;
+  text-shadow: 2px 4px 12px rgba(0,0,0,0.35); margin-bottom:0.5rem;
+  line-height:1.3;
+}
+.hero .subtitle {
+  font-size:1.1rem; color:rgba(255,255,255,0.95); font-weight:600;
+  margin-bottom:1.5rem; text-shadow: 1px 2px 6px rgba(0,0,0,0.3);
+}
+.hero-illus {
+  position:relative; z-index:1; width:100%; max-width:900px; margin:0 auto;
+  border-radius:var(--radius-lg); overflow:hidden;
+}
+.hero-illus-img { width:100%; height:auto; display:block; aspect-ratio:16/9; object-fit:cover; }
+.hero-scroll { position:absolute; bottom:1.5rem; z-index:1; font-size:2rem; animation:bounce 2s infinite; }
+@keyframes bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-16px)} }
+
+/* ── Section ── */
+section { padding:1.5rem 1rem; position:relative; }
+.section-inner { max-width:900px; margin:0 auto; }
+section:last-of-type { padding-bottom:2rem; }
+.section-tag {
+  display:inline-block; font-size:0.8rem; font-weight:700; letter-spacing:2px;
+  padding:0.25rem 1rem; border-radius:50px; margin-bottom:0.8rem;
+}
+.section-title { font-family:var(--font-display); font-size:2rem; margin-bottom:1.2rem; line-height:1.3; }
+
+/* Day colors */
+.sec-d1 { background:var(--bn-beige); }
+.sec-d1 .section-tag { background:#E8F5E9; color:#2E7D32; }
+.sec-d1 .section-title { color:#2E7D32; }
+.sec-d2 { background:var(--bn-pink-bg); }
+.sec-d2 .section-tag { background:#FFE0C0; color:var(--bn-orange); }
+.sec-d2 .section-title { color:var(--bn-orange); }
+.sec-d3 { background:var(--bn-blue-bg); }
+.sec-d3 .section-tag { background:#DDE8F8; color:#1A5276; }
+.sec-d3 .section-title { color:#1A5276; }
+
+/* ── Map ── */
+.map-wrap {
+  max-width:900px; margin:0 auto 0.8rem;
+  background:var(--bn-white); border-radius:var(--radius-lg);
+  padding:0.8rem; box-shadow:var(--shadow-md);
+  border:2.5px dashed var(--bn-border); position:relative;
+}
+.map-wrap img, .map-wrap svg { width:100%; height:auto; border-radius:12px; display:block; }
+.map-legend {
+  display:flex; gap:1.2rem; justify-content:center; flex-wrap:wrap;
+  padding:0.5rem 0; font-size:0.75rem; color:var(--bn-gray);
+}
+
+/* ── Route Flow ── */
+.route-flow {
+  display:flex; align-items:center; flex-wrap:nowrap; gap:0.5rem;
+  justify-content:flex-start; margin:0.8rem 0;
+  overflow-x:auto; -webkit-overflow-scrolling:touch;
+  scrollbar-width:none; padding:0.35rem 0.25rem;
+}
+.route-flow::-webkit-scrollbar { display:none; }
+.route-segment {
+  display:inline-flex; align-items:center; gap:0.4rem;
+  flex-shrink:0; white-space:nowrap;
+}
+.route-stop {
+  background:var(--bn-white); border:2px solid var(--bn-border);
+  border-radius:50px; padding:0.5rem 0.9rem; font-weight:700;
+  font-size:0.85rem; box-shadow:var(--shadow-sm); display:inline-flex;
+  align-items:center; gap:0.4rem; transition:transform 0.2s;
+  flex-shrink:0; white-space:nowrap; min-height:44px;
+}
+.route-stop:hover { transform:translateY(-2px) scale(1.04); }
+.route-arrow { font-size:1.2rem; color:#999; flex-shrink:0; }
+@media (min-width:768px) {
+  .route-flow { flex-wrap:wrap; justify-content:center; overflow-x:visible; }
+}
+@media (max-width:600px) {
+  .route-flow { flex-wrap:wrap; gap:0.4rem; justify-content:center; }
+  .route-segment { flex-wrap:wrap; }
+  .route-stop { padding:0.55rem 0.7rem; font-size:0.74rem; min-height:42px; display:inline-flex; align-items:center; }
+  .route-arrow { font-size:1.1rem; }
+  .route-flow { gap:0.4rem; padding:0.35rem 0.5rem; }
+  .route-segment { gap:0.35rem; }
+}
+@media (max-width:380px) {
+  .route-stop { padding:0.5rem 0.55rem; font-size:0.7rem; gap:0.2rem; min-height:40px; display:inline-flex; align-items:center; }
+  .route-arrow { font-size:1rem; }
+  .route-flow { gap:0.5rem; }
+  .route-segment { gap:0.4rem; }
+}
+.route-meta {
+  display:flex; gap:0.8rem; justify-content:center; flex-wrap:wrap; margin:0.4rem 0 0.6rem;
+}
+.route-meta span {
+  background:var(--bn-white); padding:0.3rem 0.7rem; border-radius:50px;
+  font-size:0.72rem; font-weight:600; color:var(--bn-gray); border:2px dashed var(--bn-border);
+}
+
+/* ── Cards ── */
+.card-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:0.8rem; align-items:stretch; margin-bottom:0; padding-bottom:2.5rem; }
+.spot-card {
+  background:var(--bn-white); border-radius:var(--radius-md); padding:0.9rem 1.1rem;
+  border:1.5px solid #E8E0D0; box-shadow:var(--shadow-md); position:relative;
+  transition:transform 0.25s,box-shadow 0.25s;
+  display:flex; flex-direction:column; height:100%;
+}
+.spot-card:hover { transform:translateY(-3px) rotate(-0.5deg); box-shadow:var(--shadow-hover); }
+.spot-card .card-img { width:100%; height:120px; object-fit:cover; border-radius:10px; margin-bottom:0.6rem; }
+.spot-card .card-tag {
+  position:absolute; top:-1px; left:14px; background:var(--bn-green); color:#fff;
+  padding:0.12rem 0.6rem; border-radius:0 0 8px 8px; font-size:0.65rem; font-weight:700;
+}
+.spot-card .icon-big { font-size:2rem; display:block; margin-bottom:0.3rem; }
+.spot-card h4 { font-size:1rem; margin-bottom:0.3rem; }
+.spot-card .info { display:flex; align-items:center; gap:0.3rem; font-size:0.75rem; color:var(--bn-gray); margin:0.2rem 0; }
+.spot-card .price { color:var(--bn-orange); font-weight:700; font-size:1rem; }
+.spot-card .free { color:var(--bn-green); font-weight:700; }
+.spot-card .tip {
+  background:#FFF9E6; border-radius:8px; padding:0.4rem 0.7rem;
+  font-size:0.72rem; color:#B8860B; margin-top:0.5rem; border-left:3px solid var(--bn-gold);
+  min-height:3.4rem; flex-shrink:0;
+}
+.nav-link {
+  display:inline-flex; align-items:center; gap:0.2rem; margin-top:auto; padding:0.5rem 0.6rem; border-radius:8px; transition:background 0.2s;
+  font-size:0.78rem; color:var(--bn-blue); text-decoration:none; font-weight:600;
+  align-self:flex-start; min-height:44px;
+}
+.nav-link:hover { background:rgba(74,144,217,0.06); text-decoration:underline; }
+
+/* ── Culture cards ── */
+.culture-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:0.8rem; }
+.culture-card {
+  background:var(--bn-white); border-radius:var(--radius-md); padding:0.9rem 1.1rem;
+  border-top:4px solid var(--bn-green); box-shadow:var(--shadow-md); transition:all 0.3s;
+}
+.culture-card:nth-child(2) { border-top-color:var(--bn-gold); }
+.culture-card:nth-child(3) { border-top-color:var(--bn-orange); }
+.culture-card:nth-child(4) { border-top-color:var(--bn-teal); }
+.culture-card:hover { transform:translateY(-4px); }
+.culture-card .cc-emoji { font-size:2rem; display:block; margin-bottom:0.4rem; }
+.culture-card h4 { font-size:1rem; margin-bottom:0.4rem; }
+.culture-card .cc-info { font-size:0.75rem; color:var(--bn-gray); line-height:1.5; }
+
+/* ── Food scroll ── */
+.food-scroll-wrap { overflow-x:auto; padding:0.5rem 0 0.5rem; -webkit-overflow-scrolling:touch; scrollbar-width:none; position:relative; }
+.food-scroll-wrap::-webkit-scrollbar { display:none; }
+.food-scroll { display:flex; gap:0.9rem; padding:0 0.8rem; align-items:stretch; }
+.food-card {
+  flex:0 0 155px; background:var(--bn-white); border-radius:var(--radius-md);
+  padding:0.9rem 0.7rem; text-align:center; border:1.5px solid #E8E0D0;
+  box-shadow:var(--shadow-md); transition:transform 0.25s;
+  display:flex; flex-direction:column;
+}
+.food-card:hover { transform:translateY(-5px); }
+.food-card .food-img { width:100%; height:100px; object-fit:cover; border-radius:10px; margin-bottom:0.4rem; }
+.food-card .food-emoji { font-size:2.8rem; display:block; margin-bottom:0.3rem; }
+.food-card .food-name { font-weight:800; font-size:0.95rem; }
+.food-card .food-price { color:var(--bn-orange); font-weight:700; font-size:0.85rem; margin-top:0.2rem; }
+.food-card .food-shop { color:var(--bn-gray); font-size:0.68rem; margin-top:auto; padding-top:0.3rem; line-height:1.3; }
+.food-fade {
+  position:absolute; right:0; top:0; bottom:0; width:50px;
+  background:linear-gradient(90deg,transparent,var(--bn-beige)); z-index:2; pointer-events:none;
+}
+
+/* ── Budget ── */
+.budget-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(130px,1fr)); gap:0.7rem; }
+.budget-item {
+  background:var(--bn-white); border-radius:var(--radius-md); padding:0.9rem;
+  text-align:center; box-shadow:var(--shadow-md); transition:transform 0.25s;
+}
+.budget-item:hover { transform:translateY(-3px); }
+.budget-item .bi-emoji { font-size:1.6rem; display:block; }
+.budget-item .bi-label { font-size:0.72rem; color:var(--bn-gray); margin:0.2rem 0; }
+.budget-item .bi-amount { font-size:1.2rem; font-weight:800; color:var(--bn-orange); }
+
+/* ── Highlight box ── */
+.highlight {
+  background:var(--bn-white); border-radius:var(--radius-md); padding:0.8rem 1.2rem;
+  box-shadow:var(--shadow-sm); border-left:4px solid var(--bn-gold);
+  font-size:0.85rem; line-height:1.5; margin-top:0.8rem;
+}
+
+/* ── Weather widget ── */
+.weather-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:0.8rem; margin-top:1rem; }
+.weather-card {
+  background:var(--bn-white); border-radius:var(--radius-md); padding:1rem 1.2rem;
+  box-shadow:var(--shadow-md); text-align:center;
+}
+.weather-card .w-icon { font-size:2.5rem; display:block; margin-bottom:0.3rem; }
+.weather-card .w-temp { font-size:1.4rem; font-weight:800; color:var(--bn-orange); }
+.weather-card .w-label { font-size:0.72rem; color:var(--bn-gray); margin-top:0.2rem; }
+
+/* ── Footer ── */
+.footer {
+  background:var(--bn-dark); color:#fff; text-align:center; padding:2.5rem 1.5rem;
+  border-radius:24px 24px 0 0;
+}
+.footer .heart { color:#e74c3c; font-size:1.5rem; }
+
+/* ── Back to top ── */
+#backTop {
+  position:fixed; bottom:24px; right:24px; z-index:999; width:44px; height:44px;
+  background:var(--bn-white); border-radius:50%; display:flex; align-items:center;
+  justify-content:center; font-size:1.2rem; cursor:pointer;
+  box-shadow:0 4px 12px rgba(0,0,0,0.12); opacity:0; pointer-events:none;
+  transition:all 0.3s; border:2px solid #eee;
+}
+
+
+/* ── Gallery ── */
+.gallery-section { padding:1.5rem 1rem; }
+.gallery-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:0.8rem; align-items:stretch; }
+.gallery-item { background:#fff; border-radius:16px; overflow:hidden; box-shadow:var(--shadow-md); display:flex; flex-direction:column; height:100%; }
+.gallery-item img { width:100%; height:130px; object-fit:cover; display:block; background:#e8e0d0; }
+.gallery-item p { text-align:center; padding:0.5rem; font-size:0.8rem; font-weight:700; margin-top:auto; }
+
+/* ── Responsive ── */
+@media (max-width:600px) {
+  .route-flow { flex-wrap:wrap; gap:0.4rem; justify-content:center; }
+  .route-segment { flex-wrap:wrap; }
+  .hero { min-height:auto; padding:0; }
+  .hero-content { padding:1.5rem 0.8rem 0.8rem; }
+  .hero h1 { font-size:1.5rem; }
+  .hero .subtitle { font-size:0.82rem; }
+  .hero-scroll { font-size:1.4rem; bottom:0.5rem; }
+  .section-title { font-size:1.4rem; }
+  .gallery-section { padding:1rem 0.8rem; }
+  .gallery-grid { grid-template-columns:repeat(2,1fr); gap:0.6rem; }
+  .gallery-item img { height:110px; }
+  .card-grid { grid-template-columns:repeat(2,1fr); gap:0.5rem; }
+  .spot-card { padding:0.6rem 0.7rem; }
+  .spot-card .icon-big { font-size:1.4rem; }
+  .spot-card h4 { font-size:0.85rem; }
+  .spot-card .info { font-size:0.68rem; }
+  .spot-card .tip { font-size:0.65rem; padding:0.3rem 0.5rem; min-height:auto; }
+  .spot-card .price, .spot-card .free { font-size:0.85rem; }
+  .nav-link { font-size:0.7rem; min-height:36px; padding:0.35rem 0.4rem; }
+  .food-card { flex:0 0 135px; }
+  section { padding:1rem 0.8rem; }
+  section:last-of-type { padding-bottom:1.2rem; }
+  .culture-grid { display:flex; overflow-x:auto; gap:0.5rem; scrollbar-width:none; -webkit-overflow-scrolling:touch; padding-bottom:0.3rem; }
+  .culture-grid::-webkit-scrollbar { display:none; }
+  .culture-card { flex:0 0 155px; padding:0.5rem 0.6rem; }
+  .culture-card .cc-emoji { font-size:1.2rem; margin-bottom:0.1rem; }
+  .culture-card h4 { font-size:0.8rem; margin-bottom:0.1rem; }
+  .culture-card .cc-info { font-size:0.63rem; line-height:1.2; }
+  .budget-grid { grid-template-columns:repeat(2,1fr); gap:0.5rem; }
+  .budget-item { padding:0.7rem; }
+  .budget-item .bi-amount { font-size:1rem; }
+  #miniNav { justify-content:flex-start; overflow-x:auto; flex-wrap:nowrap; -webkit-overflow-scrolling:touch; scrollbar-width:none; padding:0.4rem 0.6rem; gap:0.35rem; }
+  #miniNav::-webkit-scrollbar { display:none; }
+  #miniNav a { padding:0.55rem 0.8rem; font-size:0.78rem; flex-shrink:0; min-height:40px; display:inline-flex; align-items:center; }
+  .spot-card { padding:0.8rem 0.9rem; }
+  .spot-card h4 { font-size:0.95rem; }
+  .spot-card .info { font-size:0.72rem; }
+  .spot-card .tip { min-height:3.2rem; }
+  .food-scroll-wrap { margin:0; }
+  .food-fade { width:40px; }
+  section.sec-d1, section.sec-d2, section.sec-d3, section#food, section#budget { padding-top:0.6rem; padding-bottom:0.6rem; }
+  .highlight { margin-top:0.4rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ MINI NAV ═══ -->
+<nav id="miniNav">
+  <a href="#day1" style="background:#E8F5E9;color:#2E7D32;">Day1 🌴</a>
+  <a href="#day2" style="background:#FFE0C0;color:var(--bn-orange);">Day2 🌿</a>
+  <a href="#day3" style="background:#DDE8F8;color:#1A5276;">Day3 🐘</a>
+  <a href="#food" style="background:#FFF0D0;color:#B8860B;">🍽️ 美食</a>
+  <a href="#budget" style="background:#FFE0D0;color:#C44D15;">💰 预算</a>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<div class="hero">
+  <div class="dot-bg"></div>
+  <!-- Tropical sunset scene -->
+  <svg class="hero-sky" viewBox="0 0 1200 500" preserveAspectRatio="xMidYMid slice">
+    <defs>
+      <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#FF6B35"/>
+        <stop offset="30%" stop-color="#F7931E"/>
+        <stop offset="55%" stop-color="#FFB347"/>
+        <stop offset="75%" stop-color="#FFD89B"/>
+        <stop offset="100%" stop-color="#FFF8E7"/>
+      </linearGradient>
+      <linearGradient id="templeGold" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#FFD700"/>
+        <stop offset="100%" stop-color="#DAA520"/>
+      </linearGradient>
+      <linearGradient id="waterGrad" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#FF8C42" stop-opacity="0.3"/>
+        <stop offset="100%" stop-color="#FFD89B" stop-opacity="0.1"/>
+      </linearGradient>
+    </defs>
+    <!-- Sky -->
+    <rect width="1200" height="500" fill="url(#skyGrad)"/>
+    <!-- Sun -->
+    <circle cx="750" cy="230" r="60" fill="#FFF5E0" opacity="0.9"/>
+    <circle cx="750" cy="230" r="50" fill="#FFE4B5" opacity="0.5"/>
+    <!-- Sun rays -->
+    <g opacity="0.15" stroke="#FFF" stroke-width="2">
+      <line x1="750" y1="140" x2="750" y2="100"/><line x1="750" y1="320" x2="750" y2="360"/>
+      <line x1="660" y1="230" x2="620" y2="230"/><line x1="840" y1="230" x2="880" y2="230"/>
+      <line x1="687" y1="167" x2="658" y2="138"/><line x1="813" y1="293" x2="842" y2="322"/>
+      <line x1="813" y1="167" x2="842" y2="138"/><line x1="687" y1="293" x2="658" y2="322"/>
+    </g>
+    <!-- Distant mountains -->
+    <path d="M0,310 Q80,230 160,270 Q240,200 320,260 Q400,180 480,250 Q560,190 640,240 Q720,170 800,230 Q880,180 960,250 Q1040,200 1120,260 Q1160,240 1200,270 L1200,500 L0,500Z" fill="#2E7D32" opacity="0.25"/>
+    <path d="M0,340 Q100,280 200,320 Q300,250 400,310 Q500,260 600,300 Q700,240 800,290 Q900,250 1000,300 Q1100,260 1200,310 L1200,500 L0,500Z" fill="#1B5E20" opacity="0.35"/>
+    <!-- Rainforest canopy -->
+    <path d="M0,380 Q50,340 100,360 Q150,330 200,355 Q250,325 300,350 Q350,320 400,345 Q450,315 500,340 Q550,310 600,335 Q650,305 700,330 Q750,310 800,325 Q850,300 900,330 Q950,310 1000,335 Q1050,315 1100,340 Q1150,320 1200,350 L1200,500 L0,500Z" fill="#2E7D32" opacity="0.7"/>
+    <!-- Palm tree silhouettes -->
+    <g fill="#1A3C2A">
+      <!-- Left palm -->
+      <rect x="95" y="300" width="8" height="200"/>
+      <path d="M99,310 Q60,290 30,310 Q70,295 99,310" fill="#1A3C2A"/>
+      <path d="M99,310 Q140,280 170,300 Q130,290 99,310" fill="#1A3C2A"/>
+      <path d="M99,320 Q50,330 25,360 Q65,335 99,320" fill="#1A3C2A"/>
+      <path d="M99,320 Q150,340 175,370 Q135,345 99,320" fill="#1A3C2A"/>
+      <path d="M99,305 Q80,270 65,260 Q90,275 99,305" fill="#1A3C2A"/>
+      <!-- Right palm -->
+      <rect x="1095" y="280" width="7" height="220"/>
+      <path d="M1098,290 Q1060,270 1030,290 Q1070,275 1098,290" fill="#1A3C2A"/>
+      <path d="M1098,290 Q1135,260 1165,280 Q1125,270 1098,290" fill="#1A3C2A"/>
+      <path d="M1098,300 Q1050,310 1025,340 Q1065,315 1098,300" fill="#1A3C2A"/>
+      <path d="M1098,300 Q1145,320 1170,350 Q1130,325 1098,300" fill="#1A3C2A"/>
+    </g>
+    <!-- Dai Temple silhouette -->
+    <g fill="#1A3C2A">
+      <!-- Main stupa -->
+      <polygon points="580,240 600,160 620,240"/>
+      <circle cx="600" cy="160" r="8"/>
+      <rect x="585" y="240" width="30" height="12"/>
+      <!-- Side stupas -->
+      <polygon points="540,250 555,195 570,250"/>
+      <circle cx="555" cy="195" r="6"/>
+      <polygon points="630,250 645,195 660,250"/>
+      <circle cx="645" cy="195" r="6"/>
+      <!-- Roof tiers -->
+      <path d="M560,240 L600,220 L640,240" fill="#1A3C2A"/>
+      <path d="M555,248 L600,230 L645,248" fill="#1A3C2A"/>
+      <!-- Base -->
+      <rect x="530" y="250" width="140" height="15" rx="3" fill="#1A3C2A"/>
+    </g>
+    <!-- Birds -->
+    <g stroke="#2C1810" stroke-width="1.5" fill="none" opacity="0.4">
+      <path d="M200,120 Q210,112 220,120 Q230,112 240,120"/>
+      <path d="M850,100 Q858,94 866,100 Q874,94 882,100"/>
+      <path d="M500,80 Q506,75 512,80 Q518,75 524,80"/>
+    </g>
+  </svg>
+  <div class="hero-content">
+    <h1>西双版纳 · 热带雨林漫游记</h1>
+    <p class="subtitle">4天3夜慢游攻略 · 傣乡风情 · 雨林探秘 · 东南亚味道</p>
+  </div>
+  <div class="hero-scroll">👇</div>
+</div>
+
+<!-- ═══ MAP ═══ -->
+<section style="background:var(--bn-beige);">
+  <div class="section-inner">
+    <span class="section-tag" style="background:#E8F5E9;color:#2E7D32;">🗺️ 版纳概览</span>
+    <h2 class="section-title" style="color:#2E7D32;">一图看懂西双版纳</h2>
+    <div class="map-wrap">
+      <img src="map-handrawn.jpg" alt="西双版纳手绘地图" loading="lazy">
+    </div>
+    <div class="map-legend">
+      <span>🟢 虚线 = Day 1 景洪市区</span>
+      <span>🟠 虚线 = Day 2 植物园方向</span>
+      <span>🔵 虚线 = Day 3 野象谷</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ DAY 1 ═══ -->
+<section class="sec-d1" id="day1">
+  <div class="section-inner">
+    <span class="section-tag">DAY 1</span>
+    <div class="section-title">傣王御花园 · 星光夜市初体验</div>
+
+    <div class="route-flow">
+      <span class="route-segment"><span class="route-stop">🏯 曼听公园</span><span class="route-arrow">→</span></span>
+      <span class="route-segment"><span class="route-stop">🛕 总佛寺</span><span class="route-arrow">→</span></span>
+      <span class="route-segment"><span class="route-stop">🍜 傣味午餐</span><span class="route-arrow">→</span></span>
+      <span class="route-segment"><span class="route-stop">🌃 告庄西双景</span><span class="route-arrow">→</span></span>
+      <span class="route-stop">✨ 星光夜市</span>
+    </div>
+    <div class="route-meta">
+      <span>🕐 9:00-22:00</span><span>🚶 步行 ~8000步</span><span>💰 门票 ¥40-60</span>
+    </div>
+
+    <div class="card-grid">
+      <div class="spot-card">
+        <div class="card-tag">必去</div>
+        <span class="icon-big">🏯</span>
+        <h4>曼听公园</h4>
+        <div class="info">📍 景洪市曼听路35号</div><div class="info">🕐 8:00-17:30</div>
+        <span class="price">🎫 ¥40/人</span>
+        <a class="nav-link" href="https://ditu.amap.com/search?query=西双版纳曼听公园" target="_blank" rel="noopener">🧭 点击导航</a>
+        <div class="tip">💡 傣王御花园！白塔+八角亭+傣式宫殿，拍照绝美。上午9点到人少，2小时逛完</div>
+      </div>
+      <div class="spot-card">
+        <div class="card-tag">古迹</div>
+        <span class="icon-big">🛕</span>
+        <h4>总佛寺</h4>
+        <div class="info">📍 曼听公园南门隔壁</div><div class="info">🕐 8:00-18:00</div>
+        <span class="free">🎫 免门票</span>
+        <a class="nav-link" href="https://ditu.amap.com/search?query=西双版纳总佛寺" target="_blank" rel="noopener">🧭 点击导航</a>
+        <div class="tip">💡 版纳最高等级佛寺，金碧辉煌！曼听公园连票，从公园南门直接穿过去</div>
+      </div>
+      <div class="spot-card">
+        <div class="card-tag">地标</div>
+        <span class="icon-big">🌃</span>
+        <h4>告庄西双景</h4>
+        <div class="info">📍 景洪市宣慰大道</div><div class="info">🕐 全天候（晚上最热闹）</div>
+        <span class="free">🎫 免费逛</span>
+        <a class="nav-link" href="https://ditu.amap.com/search?query=告庄西双景" target="_blank" rel="noopener">🧭 点击导航</a>
+        <div class="tip">💡 版纳"小东南亚"！大金塔做背景，傍晚开始逛，夜市+酒吧+旅拍一条龙</div>
+      </div>
+      <div class="spot-card">
+        <div class="card-tag">夜市</div>
+        <span class="icon-big">✨</span>
+        <h4>星光夜市</h4>
+        <div class="info">📍 告庄西双景内（大金塔后方）</div>
+        <div class="info">🕐 18:00-23:30</div>
+        <span class="free">🎫 免费入场</span>
+        <a class="nav-link" href="https://ditu.amap.com/search?query=告庄星光夜市" target="_blank" rel="noopener">🧭 点击导航</a>
+        <div class="tip">💡 亚洲最大夜市！大金塔夜景超震撼。傣味烧烤+老挝冰咖啡+东南亚小吃，逛到腿软</div>
+      </div>
+    </div>
+
+    <div class="highlight">
+      🍽️ <strong>Day 1 吃什么：</strong> 曼听公园附近·耶德纳傣味餐厅午餐(¥60) → 下午·啰啰冰屋泡鲁达(¥15) → 星光夜市·傣味烧烤+香茅草烤鱼+老挝咖啡(¥80)
+    </div>
+  </div>
+</section>
+
+<!-- ═══ DAY 2 ═══ -->
+<section class="sec-d2" id="day2">
+  <div class="section-inner">
+    <span class="section-tag">DAY 2</span>
+    <div class="section-title">热带植物王国 · 中科院植物园深度游</div>
+
+    <div class="route-flow">
+      <span class="route-segment"><span class="route-stop">🌿 植物园西区</span><span class="route-arrow">→</span></span>
+      <span class="route-segment"><span class="route-stop">🌴 植物园东区</span><span class="route-arrow">→</span></span>
+      <span class="route-segment"><span class="route-stop">🍜 勐仑镇午餐</span><span class="route-arrow">→</span></span>
+      <span class="route-stop">🏊 回市区</span>
+    </div>
+    <div class="route-meta">
+      <span>🕐 7:30-18:00</span><span>🚗 包车/大巴 往返2h</span><span>💰 门票+观光车 ¥125</span>
+    </div>
+
+    <div class="card-grid">
+      <div class="spot-card">
+        <div class="card-tag">必去</div>
+        <span class="icon-big">🌿</span>
+        <h4>中科院热带植物园</h4>
+        <div class="info">📍 勐腊县勐仑镇（距市区60km）</div>
+        <div class="info">🕐 8:00-18:00</div>
+        <span class="price">🎫 ¥80+观光车¥50西区</span>
+        <a class="nav-link" href="https://ditu.amap.com/search?query=中科院西双版纳热带植物园" target="_blank" rel="noopener">🧭 点击导航</a>
+        <div class="tip">💡 中国最大植物园！必坐观光车。王莲池(6-9月)、百花园、奇花异卉园是精华，西区至少3小时</div>
+      </div>
+      <div class="spot-card">
+        <div class="card-tag">深度</div>
+        <span class="icon-big">🌴</span>
+        <h4>植物园东区（绿石林）</h4>
+        <div class="info">📍 植物园内（需另购观光车¥50）</div>
+        <div class="info">🕐 同植物园</div>
+        <span class="price">🎫 含大门票+观光车¥50</span>
+        <a class="nav-link" href="https://ditu.amap.com/search?query=中科院西双版纳热带植物园" target="_blank" rel="noopener">🧭 点击导航</a>
+        <div class="tip">💡 原始热带雨林+石灰山季雨林，绞杀榕+大板根+树瀑布很震撼。体力够就去，东区加2小时</div>
+      </div>
+      <div class="spot-card">
+        <div class="card-tag">夜游</div>
+        <span class="icon-big">🦎</span>
+        <h4>植物园夜游（可选）</h4>
+        <div class="info">📍 植物园内</div>
+        <div class="info">🕐 19:30-21:00（需预约）</div>
+        <span class="price">🎫 夜游 ¥80/人</span>
+        <a class="nav-link" href="https://ditu.amap.com/search?query=中科院西双版纳热带植物园" target="_blank" rel="noopener">🧭 点击导航</a>
+        <div class="tip">💡 导游带看萤火虫(5-8月)、竹节虫、夜间开花植物！提前「西双版纳热带植物园」公众号预约</div>
+      </div>
+    </div>
+
+    <h3 style="text-align:center;margin:0.7rem 0 0.4rem;font-size:1rem;">🚗 交通方式选择</h3>
+    <div class="culture-grid">
+      <div class="culture-card">
+        <span class="cc-emoji">🚌</span><h4>景区直通车</h4>
+        <div class="cc-info">📍 告庄/泼水广场乘车<br>💰 单程 ¥25/人<br>⏱️ 约1小时<br>📱 「版纳好行」小程序订票</div>
+      </div>
+      <div class="culture-card">
+        <span class="cc-emoji">🚗</span><h4>包车/打车</h4>
+        <div class="cc-info">📍 酒店接送<br>💰 包车约 ¥300-400/天<br>⏱️ 约50分钟<br>💡 4人以上包车划算</div>
+      </div>
+      <div class="culture-card">
+        <span class="cc-emoji">🏨</span><h4>住勐仑镇</h4>
+        <div class="cc-info">📍 植物园附近<br>💰 民宿 ¥150-250/晚<br>⏱️ 步行可达<br>💡 夜游+次日继续逛，推荐2日深度游</div>
+      </div>
+      <div class="culture-card">
+        <span class="cc-emoji">⚠️</span><h4>注意事项</h4>
+        <div class="cc-info">🌂 防晒+防蚊+雨伞<br>👟 平底鞋走一天<br>💧 自带水（园区贵）<br>📸 王莲拍照11月-5月</div>
+      </div>
+    </div>
+
+    <div class="highlight">
+      🍽️ <strong>Day 2 吃什么：</strong>早餐酒店或路边米干(¥12) → 植物园内简餐或勐仑镇傣味(¥40) → 晚餐回景洪·曼飞龙烤鸡(¥70)
+    </div>
+  </div>
+</section>
+
+<!-- ═══ DAY 3 ═══ -->
+<section class="sec-d3" id="day3">
+  <div class="section-inner">
+    <span class="section-tag">DAY 3</span>
+    <div class="section-title">野象谷寻象 · 傣族园泼水狂欢</div>
+
+    <div class="route-flow">
+      <span class="route-segment"><span class="route-stop">🐘 野象谷</span><span class="route-arrow">🚗</span></span>
+      <span class="route-segment"><span class="route-stop">🏊 傣族园</span><span class="route-arrow">→</span></span>
+      <span class="route-segment"><span class="route-stop">🌃 江边夜市</span><span class="route-arrow">→</span></span>
+      <span class="route-stop">🍺 傣迪体验</span>
+    </div>
+    <div class="route-meta">
+      <span>🕐 7:30-22:00</span><span>🚗 包车往返 ¥300</span><span>💰 门票 ¥130-160</span>
+    </div>
+
+    <div class="card-grid">
+      <div class="spot-card">
+        <div class="card-tag">必去</div>
+        <span class="icon-big">🐘</span>
+        <h4>野象谷</h4>
+        <div class="info">📍 勐养镇（距市区40km）</div>
+        <div class="info">🕐 8:00-18:00</div>
+        <span class="price">🎫 ¥60/人</span>
+        <a class="nav-link" href="https://ditu.amap.com/search?query=西双版纳野象谷" target="_blank" rel="noopener">🧭 点击导航</a>
+        <div class="tip">💡 早8点前到！亚洲象博物馆→高空栈道(看到野象概率最高)→大象学校表演(10:10/14:30)。索道可选</div>
+      </div>
+      <div class="spot-card">
+        <div class="card-tag">体验</div>
+        <span class="icon-big">🏊</span>
+        <h4>傣族园</h4>
+        <div class="info">📍 橄榄坝（距野象谷约40km）</div>
+        <div class="info">🕐 8:00-18:00</div>
+        <span class="price">🎫 ¥45+观光车¥40</span>
+        <a class="nav-link" href="https://ditu.amap.com/search?query=西双版纳傣族园" target="_blank" rel="noopener">🧭 点击导航</a>
+        <div class="tip">💡 五个傣寨连成一片！泼水广场每天13:30/15:30有泼水活动。曼春满佛寺千年历史必看</div>
+      </div>
+      <div class="spot-card">
+        <div class="card-tag">夜市</div>
+        <span class="icon-big">🌃</span>
+        <h4>江边夜市</h4>
+        <div class="info">📍 景洪市滨江大道（澜沧江畔）</div>
+        <div class="info">🕐 18:00-24:00</div>
+        <span class="free">🎫 免费</span>
+        <a class="nav-link" href="https://ditu.amap.com/search?query=景洪江边夜市" target="_blank" rel="noopener">🧭 点击导航</a>
+        <div class="tip">💡 本地人更爱的夜市！比星光夜市便宜1/3，澜沧江边吹风吃烧烤，傣味烤鱼+舂鸡脚必点</div>
+      </div>
+      <div class="spot-card">
+        <div class="card-tag">夜生活</div>
+        <span class="icon-big">🍺</span>
+        <h4>傣迪 · 六国水上市场</h4>
+        <div class="info">📍 告庄西双景</div>
+        <div class="info">🕐 19:00-02:00</div>
+        <span class="price">💰 酒吧人均 ¥60-150</span>
+        <a class="nav-link" href="https://ditu.amap.com/search?query=告庄六国水上市场" target="_blank" rel="noopener">🧭 点击导航</a>
+        <div class="tip">💡 六国水上市场夜景超美！傣迪=傣族蹦迪，推荐「拾光·傣迪」或「湄公河星光夜市酒吧街」</div>
+      </div>
+    </div>
+
+    <h3 style="text-align:center;margin:0.7rem 0 0.4rem;font-size:1rem;">🎭 可选替换项目（根据体力/兴趣）</h3>
+    <div class="culture-grid">
+      <div class="culture-card">
+        <span class="cc-emoji">🌳</span><h4>望天树景区</h4>
+        <div class="cc-info">📍 勐腊县（距市区150km）<br>🎫 ¥75+空中走廊¥120<br>⏱️ 需要一整天<br>💡 世界最高树冠走廊，恐高慎入</div>
+      </div>
+      <div class="culture-card">
+        <span class="cc-emoji">🏔️</span><h4>基诺山寨</h4>
+        <div class="cc-info">📍 基诺山（距市区30km）<br>🎫 ¥160（含餐+表演）<br>⏱️ 半天<br>💡 中国最后一个确认的少数民族</div>
+      </div>
+      <div class="culture-card">
+        <span class="cc-emoji">🌊</span><h4>澜沧江漂流</h4>
+        <div class="cc-info">📍 景洪市区码头<br>💰 ¥160-260/人<br>⏱️ 约2-3小时<br>💡 国内少有的热带河流漂流体验</div>
+      </div>
+      <div class="culture-card">
+        <span class="cc-emoji">🧖</span><h4>嘎洒温泉</h4>
+        <div class="cc-info">📍 嘎洒镇（距市区15km）<br>💰 ¥80-200<br>⏱️ 半天<br>💡 天然硫磺温泉，累了就去泡</div>
+      </div>
+    </div>
+
+    <div class="highlight">
+      🍽️ <strong>Day 3 吃什么：</strong>野象谷门口简餐(¥30) → 傣族园内傣家乐(¥50) → 江边夜市·傣味烧烤+柠檬撒撇+舂鸡脚(¥60) → 傣迪酒吧饮品(¥60)
+    </div>
+  </div>
+</section>
+
+<!-- ═══ DAY 4 (BONUS) ═══ -->
+<section class="sec-d1" id="day4" style="background:#FFF0E5;">
+  <div class="section-inner">
+    <span class="section-tag" style="background:#FFD0E0;color:#C44D7A;">DAY 4（可选）</span>
+    <div class="section-title" style="color:#C44D7A;">慢节奏收尾 · 市场淘宝 + 下午茶</div>
+
+    <div class="route-flow">
+      <span class="route-segment"><span class="route-stop">🥬 曼阁市场</span><span class="route-arrow">→</span></span>
+      <span class="route-segment"><span class="route-stop">☕ 傣乡咖啡馆</span><span class="route-arrow">→</span></span>
+      <span class="route-segment"><span class="route-stop">🎁 买伴手礼</span><span class="route-arrow">→</span></span>
+      <span class="route-stop">✈️ 返程</span>
+    </div>
+    <div class="route-meta">
+      <span>🕐 8:00-14:00</span><span>🚶 市区步行/打车</span><span>💰 购物随缘</span>
+    </div>
+
+    <div class="card-grid">
+      <div class="spot-card">
+        <div class="card-tag">淘宝</div>
+        <span class="icon-big">🥬</span>
+        <h4>曼阁市场</h4>
+        <div class="info">📍 景洪市勐泐大道</div><div class="info">🕐 6:00-18:00</div>
+        <span class="free">🎫 免费逛</span>
+        <a class="nav-link" href="https://ditu.amap.com/search?query=景洪曼阁市场" target="_blank" rel="noopener">🧭 点击导航</a>
+        <div class="tip">💡 版纳最大农贸市场！热带水果便宜到哭：榴莲、山竹、红毛丹、鸡蛋果。干巴、傣味调料带回家</div>
+      </div>
+      <div class="spot-card">
+        <div class="card-tag">伴手礼</div>
+        <span class="icon-big">🎁</span>
+        <h4>伴手礼清单</h4>
+        <div class="info">📍 曼阁市场/告庄商超</div>
+        <div class="info">🕐 全天</div>
+        <span class="price">💰 ¥100-300</span>
+        <a class="nav-link" href="https://ditu.amap.com/search?query=景洪曼阁市场" target="_blank" rel="noopener">🧭 点击导航</a>
+        <div class="tip">💡 推荐：傣家干巴(牛肉干)、普洱茶饼、版纳小粒咖啡、椰子糖、热带水果干、傣锦布艺</div>
+      </div>
+    </div>
+
+    <div class="highlight">
+      🍽️ <strong>Day 4 吃什么：</strong>曼阁市场门口·玉丙傣味早点(¥15) → 啰啰冰屋·泡鲁达+柠檬舂鸡脚(¥30) → 机场前·告庄随便吃点(¥40)
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOD SCROLL ═══ -->
+<section style="background:var(--bn-beige);" id="food">
+  <div class="section-inner">
+    <span class="section-tag" style="background:#FFF0D0;color:#B8860B;">🍽️ 版纳味道</span>
+    <h2 class="section-title" style="color:#8B6914;">必吃清单 · 12 道傣味美食</h2>
+    <p style="color:var(--bn-gray);margin-top:-0.8rem;margin-bottom:0.3rem;font-size:0.85rem;">👈 👉 左右滑动</p>
+  </div>
+
+  <div class="food-scroll-wrap" style="max-width:1000px;margin:0 auto;">
+    <div class="food-fade"></div>
+    <div class="food-scroll">
+      <div class="food-card"><span class="food-emoji">🐟</span><div class="food-name">香茅草烤鱼</div><div class="food-price">¥25-45</div><div class="food-shop">星光夜市<br>江边夜市</div></div>
+      <div class="food-card"><span class="food-emoji">🍗</span><div class="food-name">傣味烤鸡</div><div class="food-price">¥45-68/只</div><div class="food-shop">曼飞龙烤鸡<br>告庄店</div></div>
+      <div class="food-card"><span class="food-emoji">🥗</span><div class="food-name">舂鸡脚</div><div class="food-price">¥15-25</div><div class="food-shop">啰啰冰屋<br>夜市摊位</div></div>
+      <div class="food-card"><span class="food-emoji">🍜</span><div class="food-name">柠檬撒撇</div><div class="food-price">¥15-25</div><div class="food-shop">耶德纳<br>傣味餐厅</div></div>
+      <div class="food-card"><span class="food-emoji">🍍</span><div class="food-name">菠萝紫米饭</div><div class="food-price">¥25-40</div><div class="food-shop">傣族园<br>傣家乐餐厅</div></div>
+      <div class="food-card"><span class="food-emoji">🎋</span><div class="food-name">竹筒饭</div><div class="food-price">¥8-15</div><div class="food-shop">街边小摊<br>夜市</div></div>
+      <div class="food-card"><span class="food-emoji">🥤</span><div class="food-name">泡鲁达</div><div class="food-price">¥12-18</div><div class="food-shop">啰啰冰屋<br>婉泰·告庄</div></div>
+      <div class="food-card"><span class="food-emoji">☕</span><div class="food-name">老挝冰咖啡</div><div class="food-price">¥15-25</div><div class="food-shop">星光夜市<br>泰舂·告庄</div></div>
+      <div class="food-card"><span class="food-emoji">🥩</span><div class="food-name">傣味烤五花</div><div class="food-price">¥30-50</div><div class="food-shop">曼飞龙<br>傣味烧烤摊</div></div>
+      <div class="food-card"><span class="food-emoji">🍲</span><div class="food-name">酸笋煮鱼</div><div class="food-price">¥35-60</div><div class="food-shop">耶德纳<br>喃呢小寨</div></div>
+      <div class="food-card"><span class="food-emoji">🥭</span><div class="food-name">青芒果蘸辣椒</div><div class="food-price">¥8-15</div><div class="food-shop">夜市水果摊<br>街边</div></div>
+      <div class="food-card"><span class="food-emoji">🍨</span><div class="food-name">缅甸甩粑粑</div><div class="food-price">¥10-18</div><div class="food-shop">星光夜市<br>缅甸小哥摊位</div></div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ═══ PHOTO GALLERY ═══ -->
+<section style="background:var(--bn-pink-bg);" class="gallery-section">
+  <div class="section-inner">
+    <span class="section-tag" style="background:#E8F5E9;color:#2E7D32;">📷 实拍参考</span>
+    <h2 class="section-title" style="color:#2E7D32;">先看看这些，到了就知道吃啥拍啥</h2>
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="https://images.pexels.com/photos/23669967/pexels-photo-23669967.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop" alt="🍍 菠萝紫米饭" loading="lazy">
+        <p>🍍 菠萝紫米饭</p>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.pexels.com/photos/31029753/pexels-photo-31029753.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop" alt="🐟 香茅草烤鱼" loading="lazy">
+        <p>🐟 香茅草烤鱼</p>
+      </div>
+      <div class="gallery-item">
+        <img src="kaoji.jpg" alt="🍗 傣味烤鸡" loading="lazy">
+        <p>🍗 傣味烤鸡</p>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.pexels.com/photos/34699471/pexels-photo-34699471.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop" alt="🥗 舂鸡脚/舂木瓜" loading="lazy">
+        <p>🥗 舂鸡脚/舂木瓜</p>
+      </div>
+      <div class="gallery-item">
+        <img src="zhutongfan.jpg" alt="🎋 竹筒饭" loading="lazy">
+        <p>🎋 竹筒饭</p>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.pexels.com/photos/33241816/pexels-photo-33241816.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop" alt="☕ 老挝冰咖啡" loading="lazy">
+        <p>☕ 老挝冰咖啡</p>
+      </div>
+      <div class="gallery-item">
+        <img src="paoluda.jpg" alt="🥤 泡鲁达" loading="lazy">
+        <p>🥤 泡鲁达</p>
+      </div>
+      <div class="gallery-item">
+        <img src="shuiguo.jpg" alt="🥭 热带水果" loading="lazy">
+        <p>🥭 热带水果</p>
+      </div>
+      <div class="gallery-item">
+        <img src="yeshi.jpg" alt="🌃 星光夜市" loading="lazy">
+        <p>🌃 星光夜市</p>
+      </div>
+      <div class="gallery-item">
+        <img src="jinta.jpg" alt="🏯 告庄星光夜市大金塔" loading="lazy">
+        <p>🏯 傣式金塔</p>
+      </div>
+      <div class="gallery-item">
+        <img src="yulin.jpg" alt="🌴 热带雨林" loading="lazy">
+        <p>🌴 热带雨林</p>
+      </div>
+      <div class="gallery-item">
+        <img src="daizhuang.jpg" alt="🦚 傣装拍摄" loading="lazy">
+        <p>🦚 傣装拍摄</p>
+      </div>
+    </div>
+    <p style="text-align:center;font-size:0.7rem;color:var(--bn-gray);margin-top:0.8rem;">图片来源于 Pexels 免费商用图库，精选高质感摄影作品</p>
+  </div>
+</section>
+
+
+<!-- ═══ WEATHER ═══ -->
+<section style="background:var(--bn-blue-bg);">
+  <div class="section-inner">
+    <span class="section-tag" style="background:#DDE8F8;color:#1A5276;">🌤️ 出行贴士</span>
+    <h2 class="section-title" style="color:#1A5276;">什么季节去最好？</h2>
+    <div class="weather-grid">
+      <div class="weather-card">
+        <span class="w-icon">🌸</span>
+        <div class="w-temp">15°C-30°C</div>
+        <div class="w-label">11月-2月 · 旱季凉爽<br>最佳旅行季！每天晴好</div>
+      </div>
+      <div class="weather-card">
+        <span class="w-icon">🌺</span>
+        <div class="w-temp">22°C-36°C</div>
+        <div class="w-label">3月-5月 · 热季<br>泼水节(4月13-15)！但很热</div>
+      </div>
+      <div class="weather-card">
+        <span class="w-icon">🌧️</span>
+        <div class="w-temp">24°C-33°C</div>
+        <div class="w-label">6月-10月 · 雨季<br>阵雨多但人少便宜，绿意最浓</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ BUDGET ═══ -->
+<section style="background:#FFF0E5;" id="budget">
+  <div class="section-inner">
+    <span class="section-tag" style="background:#FFE0D0;color:#C44D15;">💰 花费预估</span>
+    <h2 class="section-title" style="color:#C44D15;">4 天 3 夜 · 人均约 ¥2000-2800</h2>
+
+    <div class="budget-grid">
+      <div class="budget-item"><span class="bi-emoji">🏠</span><div class="bi-label">住宿 3 晚</div><div class="bi-amount">¥600-1200</div><div style="font-size:0.68rem;color:#aaa;">告庄/泼水广场</div></div>
+      <div class="budget-item"><span class="bi-emoji">🍽️</span><div class="bi-label">美食 4 天</div><div class="bi-amount">¥600-900</div><div style="font-size:0.68rem;color:#aaa;">傣味吃到扶墙</div></div>
+      <div class="budget-item"><span class="bi-emoji">🎫</span><div class="bi-label">门票+观光车</div><div class="bi-amount">¥400-600</div><div style="font-size:0.68rem;color:#aaa;">植物园+野象谷+傣族园</div></div>
+      <div class="budget-item"><span class="bi-emoji">🚗</span><div class="bi-label">交通</div><div class="bi-amount">¥300-500</div><div style="font-size:0.68rem;color:#aaa;">包车+打车+景区直通车</div></div>
+      <div class="budget-item"><span class="bi-emoji">🎁</span><div class="bi-label">伴手礼</div><div class="bi-amount">¥100-300</div><div style="font-size:0.68rem;color:#aaa;">水果干+咖啡+茶叶</div></div>
+    </div>
+
+    <div class="budget-info-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:0.7rem;margin-top:1rem;align-items:stretch;">
+      <div class="spot-card">
+        <span class="icon-big">🏨</span><h4>住哪儿</h4>
+        <div class="info">告庄西双景/泼水广场附近 ¥200-400/晚</div>
+        <div class="tip">💡 告庄方便逛夜市但吵；泼水广场安静且便宜。推荐：湄公河景兰大酒店（性价比高）或傣式民宿</div>
+      </div>
+      <div class="spot-card">
+        <span class="icon-big">🚗</span><h4>怎么走</h4>
+        <div class="info">市区打车+景区直通车+远途包车+租电瓶车</div>
+        <div class="tip">💡 强烈推荐租电瓶车游玩！更划算还不堵车（市内所有景区都能到~30km），远距离景区除外。包车¥300-400/天，滴滴起步¥8，直通车「版纳好行」小程序</div>
+      </div>
+      <div class="spot-card">
+        <span class="icon-big">🌤️</span><h4>天气穿搭</h4>
+        <div class="info">热带季风气候，年均21°C，只有旱季雨季之分</div>
+        <div class="tip">💡 夏装+防晒衣+平底鞋+晴雨伞+驱蚊液+防晒霜。早晚微凉带薄长袖。寺庙不露肩不短裙</div>
+      </div>
+      <div class="spot-card">
+        <span class="icon-big">⚠️</span><h4>重要提醒</h4>
+        <div class="info">防蚊！防晒！提前订票！</div>
+        <div class="tip">💡 ①野象谷8点前到人少 ②植物园夜游提前3天预约 ③泼水节(4月)房价翻3倍需提前1月订 ④不要在景区买银器/玉石</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<div class="footer">
+  <p style="font-size:1.2rem;">🌴 去西双版纳，做一场热带雨林的梦</p>
+  <p style="color:#aaa;font-size:0.85rem;margin-top:0.5rem;">大象在林中漫步 · 澜沧江静静流淌 · 星光夜市万家灯火</p>
+  <p style="color:#666;font-size:0.7rem;margin-top:0.8rem;">
+    数据来源：西双版纳州文旅局 · 中科院西双版纳热带植物园官网 · 携程 · 大众点评 · 小红书<br>
+    制作于 2026.06.04 · 小楠带你游版专属定制攻略
+  </p>
+</div>
+
+<!-- ═══ BACK TO TOP ═══ -->
+<div id="backTop">⬆️</div>
+
+<!-- ═══ SCRIPTS ═══ -->
+<script>
+// Mini nav show/hide on scroll
+var miniNav = document.getElementById('miniNav');
+var backTop = document.getElementById('backTop');
+var heroHeight = 300;
+
+window.addEventListener('scroll', function() {
+  var y = window.scrollY;
+  if (y > heroHeight) {
+    miniNav.style.transform = 'translateY(0)';
+  } else {
+    miniNav.style.transform = 'translateY(-100%)';
+  }
+  if (y > 600) {
+    backTop.style.opacity = '1';
+    backTop.style.pointerEvents = 'auto';
+  } else {
+    backTop.style.opacity = '0';
+    backTop.style.pointerEvents = 'none';
+  }
+});
+
+backTop.addEventListener('click', function() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+</script>
+
+<script>
+document.addEventListener('contextmenu',function(e){var t=e.target;if(t.tagName==='IMG'||t.closest('.gallery-item')||t.closest('.map-wrap')){e.preventDefault();return false}});
+document.addEventListener('keydown',function(e){if((e.ctrlKey||e.metaKey)&&(e.key==='s'||e.key==='S'||e.key==='u'||e.key==='U')){e.preventDefault();return false}});
+</script>
+
+</body>
+</html>
