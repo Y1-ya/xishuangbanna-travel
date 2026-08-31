@@ -78,6 +78,11 @@ section:last-of-type { padding-bottom:2rem; }
 }
 .section-title { font-family:var(--font-display); font-size:2rem; margin-bottom:1.2rem; line-height:1.3; }
 .section-sub { color:var(--bn-gray); font-size:0.85rem; margin:-0.6rem 0 1rem; text-align:center; }
+.spot-cat {
+  display:flex; align-items:center; gap:0.6rem; font-weight:800; font-size:1.05rem;
+  color:var(--bn-dark); margin:1.5rem 0 0.7rem; letter-spacing:1px;
+}
+.spot-cat::after { content:''; flex:1; height:2px; background:linear-gradient(90deg,var(--bn-border),transparent); }
 
 /* Section colors */
 .sec-green { background:var(--bn-beige); }
@@ -366,11 +371,21 @@ section:last-of-type { padding-bottom:2rem; }
 <!-- ═══ SPOTS ═══ -->
 <section class="sec-green" id="spots">
   <div class="section-inner">
-    <span class="section-tag">🏯 热门景点</span>
-    <div class="section-title">12 个必去与深度 · 全部带导航</div>
-    <p class="section-sub">市区经典 + 雨林秘境 + 小众村寨，按距离远近自由组合</p>
+    <span class="section-tag">🏯 景点全图鉴</span>
+    <div class="section-title">17 个景点 · 分门别类全带导航</div>
+    <p class="section-sub">必去 · 古迹 · 热门 · 深度 · 小众 · 古寨 · 茶山 —— 按类型挑，按方向玩</p>
 
+    <div class="spot-cat">⭐ 必去景点</div>
     <div class="card-grid">
+      <div class="spot-card">
+        <div class="card-tag">必去</div>
+        <span class="icon-big">🏊</span>
+        <h4>傣族园</h4>
+        <div class="info">📍 橄榄坝（距市区30km）</div><div class="info">🕐 8:00-18:00</div>
+        <span class="price">🎫 ¥45+观光车¥40</span>
+        <a class="nav-link" href="https://uri.amap.com/navigation?to=100.94565,21.84863,%E8%A5%BF%E5%8F%8C%E7%89%88%E7%BA%B3%E5%82%A3%E6%97%8F%E5%9B%AD&mode=car" target="_blank" rel="noopener">🧭 点击导航</a>
+        <div class="tip">💡 五个傣寨连成一片！泼水广场每天13:30/15:30泼水活动，曼春满佛寺千年历史</div>
+      </div>
       <div class="spot-card">
         <div class="card-tag">必去</div>
         <span class="icon-big">🏯</span>
@@ -381,6 +396,28 @@ section:last-of-type { padding-bottom:2rem; }
         <div class="tip">💡 傣王御花园！白塔+八角亭+傣式宫殿，拍照绝美。上午9点前人少，2小时逛完</div>
       </div>
       <div class="spot-card">
+        <div class="card-tag">必去</div>
+        <span class="icon-big">🌃</span>
+        <h4>告庄西双景</h4>
+        <div class="info">📍 景洪市宣慰大道</div><div class="info">🕐 全天（晚上最热闹）</div>
+        <span class="free">🎫 免费逛</span>
+        <a class="nav-link" href="https://uri.amap.com/navigation?to=100.81945,22.00921,%E5%91%8A%E5%BA%84%E8%A5%BF%E5%8F%8C%E6%99%AF&mode=car" target="_blank" rel="noopener">🧭 点击导航</a>
+        <div class="tip">💡 版纳"小东南亚"！星光夜市就在大金塔后方，傍晚开始逛，夜市+酒吧+旅拍一条龙</div>
+      </div>
+      <div class="spot-card">
+        <div class="card-tag">必去</div>
+        <span class="icon-big">🌿</span>
+        <h4>中科院热带植物园</h4>
+        <div class="info">📍 勐腊县勐仑镇（距市区60km）</div><div class="info">🕐 8:00-18:00</div>
+        <span class="price">🎫 ¥80+观光车¥50</span>
+        <a class="nav-link" href="https://uri.amap.com/navigation?to=101.27418,21.91460,%E8%A5%BF%E5%8F%8C%E7%89%88%E7%BA%B3%E7%83%AD%E5%B8%A6%E6%A4%8D%E7%89%A9%E5%9B%AD&mode=car" target="_blank" rel="noopener">🧭 点击导航</a>
+        <div class="tip">💡 中国最大植物园！王莲池(6-9月)、百花园是精华，西区至少3小时，夜游需另约</div>
+      </div>
+    </div>
+
+    <div class="spot-cat">🛕 古迹景点</div>
+    <div class="card-grid">
+      <div class="spot-card">
         <div class="card-tag">古迹</div>
         <span class="icon-big">🛕</span>
         <h4>总佛寺</h4>
@@ -390,13 +427,26 @@ section:last-of-type { padding-bottom:2rem; }
         <div class="tip">💡 版纳最高等级佛寺，金碧辉煌！和曼听公园连票，从公园南门直接穿过去</div>
       </div>
       <div class="spot-card">
-        <div class="card-tag">地标</div>
-        <span class="icon-big">🌃</span>
-        <h4>告庄西双景</h4>
-        <div class="info">📍 景洪市宣慰大道</div><div class="info">🕐 全天（晚上最热闹）</div>
-        <span class="free">🎫 免费逛</span>
-        <a class="nav-link" href="https://uri.amap.com/navigation?to=100.81945,22.00921,%E5%91%8A%E5%BA%84%E8%A5%BF%E5%8F%8C%E6%99%AF&mode=car" target="_blank" rel="noopener">🧭 点击导航</a>
-        <div class="tip">💡 版纳"小东南亚"！大金塔做背景，傍晚开始逛，夜市+酒吧+旅拍一条龙</div>
+        <div class="card-tag">古迹</div>
+        <span class="icon-big">🏛️</span>
+        <h4>般若寺</h4>
+        <div class="info">📍 景洪市菩提大道（度假区内）</div><div class="info">🕐 8:00-18:00</div>
+        <span class="free">🎫 免费</span>
+        <a class="nav-link" href="https://uri.amap.com/navigation?to=100.78377,21.96612,%E8%88%AC%E8%8B%A5%E5%AF%BA&mode=car" target="_blank" rel="noopener">🧭 点击导航</a>
+        <div class="tip">💡 白色佛塔小寺，人少清静，蓝天白塔随手一拍都是大片，半小时逛完</div>
+      </div>
+    </div>
+
+    <div class="spot-cat">🔥 热门景点</div>
+    <div class="card-grid">
+      <div class="spot-card">
+        <div class="card-tag">热门</div>
+        <span class="icon-big">🌲</span>
+        <h4>原始森林公园</h4>
+        <div class="info">📍 景洪市东郊（距市区8km）</div><div class="info">🕐 8:00-18:00</div>
+        <span class="price">🎫 ¥45+观光车¥50</span>
+        <a class="nav-link" href="https://uri.amap.com/navigation?to=100.87949,22.02522,%E5%8E%9F%E5%A7%8B%E6%A3%AE%E6%9E%97%E5%85%AC%E5%9B%AD&mode=car" target="_blank" rel="noopener">🧭 点击导航</a>
+        <div class="tip">💡 丛林飞跃高空滑索超刺激！湄公河水底世界看澜沧江鱼，孔雀放飞，玩一天不重样</div>
       </div>
       <div class="spot-card">
         <div class="card-tag">热门</div>
@@ -408,16 +458,16 @@ section:last-of-type { padding-bottom:2rem; }
         <div class="tip">💡 山顶金佛+玻璃观景台，俯瞰整个景洪城。下午去光线最好，1.5-2小时逛完</div>
       </div>
       <div class="spot-card">
-        <div class="card-tag">必去</div>
-        <span class="icon-big">🌿</span>
-        <h4>中科院热带植物园</h4>
-        <div class="info">📍 勐腊县勐仑镇（距市区60km）</div><div class="info">🕐 8:00-18:00</div>
-        <span class="price">🎫 ¥80+观光车¥50</span>
-        <a class="nav-link" href="https://uri.amap.com/navigation?to=101.27418,21.91460,%E8%A5%BF%E5%8F%8C%E7%89%88%E7%BA%B3%E7%83%AD%E5%B8%A6%E6%A4%8D%E7%89%A9%E5%9B%AD&mode=car" target="_blank" rel="noopener">🧭 点击导航</a>
-        <div class="tip">💡 中国最大植物园！王莲池(6-9月)、百花园是精华，西区至少3小时，夜游需另约</div>
+        <div class="card-tag">热门</div>
+        <span class="icon-big">🌺</span>
+        <h4>热带花卉园</h4>
+        <div class="info">📍 景洪市宣慰大道99号</div><div class="info">🕐 8:00-18:00</div>
+        <span class="price">🎫 ¥40/人</span>
+        <a class="nav-link" href="https://uri.amap.com/navigation?to=100.78638,22.01162,%E8%A5%BF%E5%8F%8C%E7%89%88%E7%BA%B3%E7%83%AD%E5%B8%A6%E8%8A%B1%E5%8D%89%E5%9B%AD&mode=car" target="_blank" rel="noopener">🧭 点击导航</a>
+        <div class="tip">💡 市区里的植物王国！割胶体验+水果采摘，不想跑远就来这里，2小时逛完</div>
       </div>
       <div class="spot-card">
-        <div class="card-tag">必去</div>
+        <div class="card-tag">热门</div>
         <span class="icon-big">🐘</span>
         <h4>野象谷</h4>
         <div class="info">📍 勐养镇（距市区40km）</div><div class="info">🕐 8:00-18:00</div>
@@ -425,15 +475,10 @@ section:last-of-type { padding-bottom:2rem; }
         <a class="nav-link" href="https://uri.amap.com/navigation?to=100.86503,22.16679,%E9%87%8E%E8%B1%A1%E8%B0%B7&mode=car" target="_blank" rel="noopener">🧭 点击导航</a>
         <div class="tip">💡 早8点前到！高空栈道看野象概率最高，大象学校表演10:10/14:30</div>
       </div>
-      <div class="spot-card">
-        <div class="card-tag">体验</div>
-        <span class="icon-big">🏊</span>
-        <h4>傣族园</h4>
-        <div class="info">📍 橄榄坝（距市区30km）</div><div class="info">🕐 8:00-18:00</div>
-        <span class="price">🎫 ¥45+观光车¥40</span>
-        <a class="nav-link" href="https://uri.amap.com/navigation?to=100.94565,21.84863,%E8%A5%BF%E5%8F%8C%E7%89%88%E7%BA%B3%E5%82%A3%E6%97%8F%E5%9B%AD&mode=car" target="_blank" rel="noopener">🧭 点击导航</a>
-        <div class="tip">💡 五个傣寨连成一片！泼水广场每天13:30/15:30泼水活动，曼春满佛寺千年历史</div>
-      </div>
+    </div>
+
+    <div class="spot-cat">🌳 深度游</div>
+    <div class="card-grid">
       <div class="spot-card">
         <div class="card-tag">深度</div>
         <span class="icon-big">🌳</span>
@@ -443,6 +488,10 @@ section:last-of-type { padding-bottom:2rem; }
         <a class="nav-link" href="https://uri.amap.com/navigation?to=101.58834,21.62152,%E6%9C%9B%E5%A4%A9%E6%A0%91%E6%99%AF%E5%8C%BA&mode=car" target="_blank" rel="noopener">🧭 点击导航</a>
         <div class="tip">💡 世界最高树冠走廊，走在36米高空！需要一整天，恐高慎入</div>
       </div>
+    </div>
+
+    <div class="spot-cat">🦚 小众玩法</div>
+    <div class="card-grid">
       <div class="spot-card">
         <div class="card-tag">小众</div>
         <span class="icon-big">🏔️</span>
@@ -452,17 +501,21 @@ section:last-of-type { padding-bottom:2rem; }
         <a class="nav-link" href="https://uri.amap.com/navigation?to=101.00527,22.03621,%E5%9F%BA%E8%AF%BA%E5%B1%B1%E5%AF%A8&mode=car" target="_blank" rel="noopener">🧭 点击导航</a>
         <div class="tip">💡 中国最后一个确认的少数民族！歌舞+大鼓舞表演，半天行程刚好</div>
       </div>
+    </div>
+
+    <div class="spot-cat">🏡 古寨村落</div>
+    <div class="card-grid">
       <div class="spot-card">
-        <div class="card-tag">亲子</div>
-        <span class="icon-big">🌺</span>
-        <h4>热带花卉园</h4>
-        <div class="info">📍 景洪市宣慰大道99号</div><div class="info">🕐 8:00-18:00</div>
-        <span class="price">🎫 ¥40/人</span>
-        <a class="nav-link" href="https://uri.amap.com/navigation?to=100.78638,22.01162,%E8%A5%BF%E5%8F%8C%E7%89%88%E7%BA%B3%E7%83%AD%E5%B8%A6%E8%8A%B1%E5%8D%89%E5%9B%AD&mode=car" target="_blank" rel="noopener">🧭 点击导航</a>
-        <div class="tip">💡 市区里的植物王国！割胶体验+水果采摘，不想跑远就来这里，2小时逛完</div>
+        <div class="card-tag">古寨</div>
+        <span class="icon-big">🏘️</span>
+        <h4>曼掌村</h4>
+        <div class="info">📍 勐养镇（野象谷方向）</div><div class="info">🕐 全天</div>
+        <span class="free">🎫 免费</span>
+        <a class="nav-link" href="https://uri.amap.com/navigation?to=100.89421,22.08483,%E6%9B%BC%E6%8E%8C%E6%9D%91&mode=car" target="_blank" rel="noopener">🧭 点击导航</a>
+        <div class="tip">💡 傣族文化农庄！看傣纸制作+慢轮制陶+织锦，比景区更原汁原味，和野象谷顺路</div>
       </div>
       <div class="spot-card">
-        <div class="card-tag">村寨</div>
+        <div class="card-tag">古寨</div>
         <span class="icon-big">🏡</span>
         <h4>曼远村</h4>
         <div class="info">📍 勐罕镇（距市区30km）</div><div class="info">🕐 全天</div>
@@ -470,6 +523,19 @@ section:last-of-type { padding-bottom:2rem; }
         <a class="nav-link" href="https://uri.amap.com/navigation?to=100.96201,21.91661,%E6%9B%BC%E8%BF%9C%E6%9D%91&mode=car" target="_blank" rel="noopener">🧭 点击导航</a>
         <div class="tip">💡 《向往的生活》拍摄地！蘑菇屋+傣族吊脚楼，安静小众，拍照超好看</div>
       </div>
+      <div class="spot-card">
+        <div class="card-tag">古寨</div>
+        <span class="icon-big">🌾</span>
+        <h4>曼贺纳古寨</h4>
+        <div class="info">📍 景洪市南郊（距市区5km）</div><div class="info">🕐 全天</div>
+        <span class="free">🎫 免费</span>
+        <a class="nav-link" href="https://uri.amap.com/navigation?to=100.82591,21.97166,%E6%9B%BC%E8%B4%BA%E7%BA%B3%E5%8F%A4%E5%AF%A8&mode=car" target="_blank" rel="noopener">🧭 点击导航</a>
+        <div class="tip">💡 原生态傣寨，田园风光+古佛寺，游客少适合慢逛，半天刚好</div>
+      </div>
+    </div>
+
+    <div class="spot-cat">🍵 茶山秘境</div>
+    <div class="card-grid">
       <div class="spot-card">
         <div class="card-tag">茶山</div>
         <span class="icon-big">🍵</span>
@@ -479,6 +545,15 @@ section:last-of-type { padding-bottom:2rem; }
         <a class="nav-link" href="https://uri.amap.com/navigation?to=100.54322,21.88940,%E5%8D%97%E7%B3%AF%E5%B1%B1&mode=car" target="_blank" rel="noopener">🧭 点击导航</a>
         <div class="tip">💡 800年栽培型古茶王树！逛茶园+品普洱+茶山云海，爱茶人必去，半天行程</div>
       </div>
+      <div class="spot-card">
+        <div class="card-tag">茶山</div>
+        <span class="icon-big">🍃</span>
+        <h4>普洱景迈山</h4>
+        <div class="info">📍 普洱市澜沧县惠民镇（距市区90km）</div><div class="info">🕐 全天</div>
+        <span class="free">🎫 免费</span>
+        <a class="nav-link" href="https://uri.amap.com/navigation?to=99.98946,22.18172,%E6%99%AF%E8%BF%88%E5%B1%B1%E5%8F%A4%E8%8C%B6%E6%9E%97&mode=car" target="_blank" rel="noopener">🧭 点击导航</a>
+        <div class="tip">💡 世界遗产千年古茶林！云海日出+古寨茶园，茶迷朝圣地，建议住一晚</div>
+      </div>
     </div>
   </div>
 </section>
@@ -487,7 +562,7 @@ section:last-of-type { padding-bottom:2rem; }
 <section class="sec-orange" id="fun">
   <div class="section-inner">
     <span class="section-tag">🎡 值得玩</span>
-    <div class="section-title">8 种打开版纳的方式</div>
+    <div class="section-title">11 种打开版纳的方式</div>
     <p class="section-sub">不只是看景点，这些体验才是版纳的精髓</p>
 
     <div class="card-grid">
@@ -497,7 +572,7 @@ section:last-of-type { padding-bottom:2rem; }
         <h4>傣装旅拍</h4>
         <div class="info">📍 告庄西双景内</div><div class="info">🕐 全天</div>
         <span class="price">💰 ¥199-699/套</span>
-        <a class="nav-link" href="https://uri.amap.com/navigation?to=100.81945,22.00921,%E5%91%8A%E5%BA%84%E8%A5%BF%E5%8F%8C%E6%99%AF&mode=car%E6%97%85%E6%8B%8D" target="_blank" rel="noopener">🧭 点击导航</a>
+        <a class="nav-link" href="https://uri.amap.com/navigation?to=100.81945,22.00921,%E5%91%8A%E5%BA%84%E8%A5%BF%E5%8F%8C%E6%99%AF%E6%97%85%E6%8B%8D&mode=car" target="_blank" rel="noopener">🧭 点击导航</a>
         <div class="tip">💡 告庄满街旅拍店，傣装+哈尼装最出片。货比三家看客片，晚上大金塔夜景最值</div>
       </div>
       <div class="spot-card">
@@ -519,13 +594,40 @@ section:last-of-type { padding-bottom:2rem; }
         <div class="tip">💡 夜游澜沧江，两岸夜景+民族歌舞表演，含餐船票更划算</div>
       </div>
       <div class="spot-card">
-        <div class="card-tag">放松</div>
-        <span class="icon-big">🧖</span>
-        <h4>嘎洒温泉</h4>
-        <div class="info">📍 嘎洒镇（距市区15km）</div><div class="info">🕐 10:00-22:00</div>
-        <span class="price">💰 ¥80-200</span>
-        <a class="nav-link" href="https://uri.amap.com/navigation?to=100.76330,21.95244,%E5%98%8E%E6%B4%92%E6%B8%A9%E6%B3%89&mode=car" target="_blank" rel="noopener">🧭 点击导航</a>
-        <div class="tip">💡 天然硫磺温泉，逛累了来泡半天，回血神器</div>
+        <div class="card-tag">探险</div>
+        <span class="icon-big">🥾</span>
+        <h4>雨林徒步</h4>
+        <div class="info">📍 勐远仙境（距市区70km）</div><div class="info">🕐 全天（需预约）</div>
+        <span class="price">💰 ¥100-300</span>
+        <a class="nav-link" href="https://uri.amap.com/navigation?to=101.38398,21.71213,%E5%8B%90%E8%BF%9C%E4%BB%99%E5%A2%83&mode=car" target="_blank" rel="noopener">🧭 点击导航</a>
+        <div class="tip">💡 原始雨林溯溪+树降，专业向导带队，勐远仙境精品小团</div>
+      </div>
+      <div class="spot-card">
+        <div class="card-tag">刺激</div>
+        <span class="icon-big">🚤</span>
+        <h4>金三角快艇</h4>
+        <div class="info">📍 景洪港码头</div><div class="info">🕐 9:00-17:00</div>
+        <span class="price">💰 ¥180-280</span>
+        <a class="nav-link" href="https://uri.amap.com/navigation?to=100.80461,22.00955,%E6%99%AF%E6%B4%AA%E6%B8%AF%E5%BF%AB%E8%89%87&mode=car" target="_blank" rel="noopener">🧭 点击导航</a>
+        <div class="tip">💡 澜沧江快艇飞驰，感受"东方多瑙河"的速度与激情</div>
+      </div>
+      <div class="spot-card">
+        <div class="card-tag">刺激</div>
+        <span class="icon-big">🏍️</span>
+        <h4>越野骑行</h4>
+        <div class="info">📍 基诺山（距市区30km）</div><div class="info">🕐 全天</div>
+        <span class="price">💰 ¥200-400</span>
+        <a class="nav-link" href="https://uri.amap.com/navigation?to=101.00527,22.03621,%E5%9F%BA%E8%AF%BA%E5%B1%B1%E8%B6%8A%E9%87%8E%E9%AA%91%E8%A1%8C&mode=car" target="_blank" rel="noopener">🧭 点击导航</a>
+        <div class="tip">💡 雨林ATV越野摩托，山路泥地解压神器，教练带队安全有保障</div>
+      </div>
+      <div class="spot-card">
+        <div class="card-tag">新奇</div>
+        <span class="icon-big">🤿</span>
+        <h4>SevenMeter潜水中心</h4>
+        <div class="info">📍 告庄西双景</div><div class="info">🕐 10:00-20:00</div>
+        <span class="price">💰 ¥300-600</span>
+        <a class="nav-link" href="https://uri.amap.com/navigation?to=100.81945,22.00921,SevenMeter%E6%BD%9C%E6%B0%B4%E4%B8%AD%E5%BF%83&mode=car" target="_blank" rel="noopener">🧭 点击导航</a>
+        <div class="tip">💡 室内潜水体验+水下写真，零基础也能玩，教练一对一，旱鸭子福音</div>
       </div>
       <div class="spot-card">
         <div class="card-tag">奇趣</div>
@@ -539,11 +641,11 @@ section:last-of-type { padding-bottom:2rem; }
       <div class="spot-card">
         <div class="card-tag">自由</div>
         <span class="icon-big">🛵</span>
-        <h4>共享电瓶车环城</h4>
-        <div class="info">📍 景洪市区</div><div class="info">🕐 全天</div>
-        <span class="free">💰 ¥2起</span>
-        <a class="nav-link" href="https://uri.amap.com/navigation?to=100.80662,22.00292,%E6%99%AF%E6%B4%AA%E5%B8%82%E4%B8%AD%E5%BF%83&mode=car" target="_blank" rel="noopener">🧭 找车骑行</a>
-        <div class="tip">💡 市区景点都在30km内，扫码就走，傍晚沿澜沧江骑行超舒服</div>
+        <h4>租电瓶车环城</h4>
+        <div class="info">📍 告庄租车点 / 市区</div><div class="info">🕐 全天</div>
+        <span class="free">💰 ¥30-50/天</span>
+        <a class="nav-link" href="https://uri.amap.com/navigation?to=100.81945,22.00921,%E7%A7%9F%E7%94%B5%E7%93%B6%E8%BD%A6&mode=car" target="_blank" rel="noopener">🧭 找车骑行</a>
+        <div class="tip">💡 告庄租车点最多，续航足环城一圈，傍晚沿澜沧江骑行超舒服</div>
       </div>
       <div class="spot-card">
         <div class="card-tag">节庆</div>
@@ -599,17 +701,17 @@ section:last-of-type { padding-bottom:2rem; }
         <h4>六国水上市场</h4>
         <div class="info">📍 告庄西双景</div><div class="info">🕐 19:00-02:00</div>
         <span class="free">🎫 免费</span>
-        <a class="nav-link" href="https://uri.amap.com/navigation?to=100.81945,22.00921,%E5%91%8A%E5%BA%84%E8%A5%BF%E5%8F%8C%E6%99%AF&mode=car%E6%B0%B4%E4%B8%8A%E5%B8%82%E5%9C%BA" target="_blank" rel="noopener">🧭 点击导航</a>
+        <a class="nav-link" href="https://uri.amap.com/navigation?to=100.81945,22.00921,%E5%91%8A%E5%BA%84%E8%A5%BF%E5%8F%8C%E6%99%AF%E6%B0%B4%E4%B8%8A%E5%B8%82%E5%9C%BA&mode=car" target="_blank" rel="noopener">🧭 点击导航</a>
         <div class="tip">💡 六国风情水上集市，夜景超美，坐小船夜游很有氛围</div>
       </div>
       <div class="spot-card">
         <div class="card-tag">淘宝</div>
-        <span class="icon-big">🥬</span>
-        <h4>曼阁市场</h4>
+        <span class="icon-big">🥭</span>
+        <h4>曼阁市场水果批发中心</h4>
         <div class="info">📍 景洪市勐泐大道</div><div class="info">🕐 6:00-18:00</div>
         <span class="free">🎫 免费逛</span>
-        <a class="nav-link" href="https://uri.amap.com/navigation?to=100.79975,22.02505,%E6%9B%BC%E9%98%81%E5%B8%82%E5%9C%BA&mode=car" target="_blank" rel="noopener">🧭 点击导航</a>
-        <div class="tip">💡 版纳最大农贸市场！热带水果便宜到哭：榴莲山竹红毛丹。干巴+傣味调料带回家</div>
+        <a class="nav-link" href="https://uri.amap.com/navigation?to=100.79975,22.02505,%E6%9B%BC%E9%98%81%E5%B8%82%E5%9C%BA%E6%B0%B4%E6%9E%9C%E6%89%B9%E5%8F%91%E4%B8%AD%E5%BF%83&mode=car" target="_blank" rel="noopener">🧭 点击导航</a>
+        <div class="tip">💡 版纳最大水果批发市场！榴莲山竹红毛丹按批发价拿，干巴+傣味调料带回家</div>
       </div>
       <div class="spot-card">
         <div class="card-tag">民俗</div>
@@ -626,7 +728,7 @@ section:last-of-type { padding-bottom:2rem; }
         <h4>告庄酒吧街</h4>
         <div class="info">📍 告庄西双景内</div><div class="info">🕐 19:00-02:00</div>
         <span class="price">💰 人均¥60-150</span>
-        <a class="nav-link" href="https://uri.amap.com/navigation?to=100.81945,22.00921,%E5%91%8A%E5%BA%84%E8%A5%BF%E5%8F%8C%E6%99%AF&mode=car%E9%85%92%E5%90%A7%E8%A1%97" target="_blank" rel="noopener">🧭 点击导航</a>
+        <a class="nav-link" href="https://uri.amap.com/navigation?to=100.81945,22.00921,%E5%91%8A%E5%BA%84%E8%A5%BF%E5%8F%8C%E6%99%AF%E9%85%92%E5%90%A7%E8%A1%97&mode=car" target="_blank" rel="noopener">🧭 点击导航</a>
         <div class="tip">💡 傣迪+民谣+露天小酒馆，逛完夜市续摊首选</div>
       </div>
     </div>
@@ -637,7 +739,7 @@ section:last-of-type { padding-bottom:2rem; }
 <section class="sec-gold" id="food">
   <div class="section-inner">
     <span class="section-tag">🍽️ 版纳味道</span>
-    <h2 class="section-title">必吃清单 · 12 道傣味</h2>
+    <h2 class="section-title">必吃清单 · 14 道傣味</h2>
     <p style="color:var(--bn-gray);margin-top:-0.8rem;margin-bottom:0.3rem;font-size:0.85rem;">👈 👉 左右滑动</p>
   </div>
 
@@ -646,15 +748,17 @@ section:last-of-type { padding-bottom:2rem; }
       <div class="food-card"><img class="food-img" src="kaoyu.jpg" alt="香茅草烤鱼" loading="lazy"><div class="food-name">香茅草烤鱼</div><div class="food-price">¥25-45</div><div class="food-shop">星光夜市<br>江边夜市</div></div>
       <div class="food-card"><img class="food-img" src="kaoji.jpg" alt="傣味烤鸡" loading="lazy"><div class="food-name">傣味烤鸡</div><div class="food-price">¥45-68/只</div><div class="food-shop">曼飞龙烤鸡<br>告庄店</div></div>
       <div class="food-card"><img class="food-img" src="chongjijiao.jpg" alt="舂鸡脚" loading="lazy"><div class="food-name">舂鸡脚</div><div class="food-price">¥15-25</div><div class="food-shop">啰啰冰屋<br>夜市摊位</div></div>
-      <div class="food-card"><img class="food-img" src="salie.jpg" alt="柠檬撒撇" loading="lazy"><div class="food-name">柠檬撒撇</div><div class="food-price">¥15-25</div><div class="food-shop">耶德纳<br>傣味餐厅</div></div>
-      <div class="food-card"><img class="food-img" src="boluofan.jpg" alt="菠萝紫米饭" loading="lazy"><div class="food-name">菠萝紫米饭</div><div class="food-price">¥25-40</div><div class="food-shop">傣族园<br>傣家乐餐厅</div></div>
+      <div class="food-card"><img class="food-img" src="salie.jpg" alt="柠檬撒撇" loading="lazy"><div class="food-name">柠檬撒撇</div><div class="food-price">¥15-25</div><div class="food-shop">傣十二四季<br>云南菜</div></div>
+      <div class="food-card"><img class="food-img" src="boluofan.jpg" alt="菠萝饭" loading="lazy"><div class="food-name">菠萝饭</div><div class="food-price">¥25-40</div><div class="food-shop">傣族园<br>傣家乐餐厅</div></div>
       <div class="food-card"><img class="food-img" src="zhutongfan.jpg" alt="竹筒饭" loading="lazy"><div class="food-name">竹筒饭</div><div class="food-price">¥8-15</div><div class="food-shop">街边小摊<br>夜市</div></div>
       <div class="food-card"><img class="food-img" src="paoluda.jpg" alt="泡鲁达" loading="lazy"><div class="food-name">泡鲁达</div><div class="food-price">¥12-18</div><div class="food-shop">啰啰冰屋<br>婉泰·告庄</div></div>
       <div class="food-card"><img class="food-img" src="bingkafei.jpg" alt="老挝冰咖啡" loading="lazy"><div class="food-name">老挝冰咖啡</div><div class="food-price">¥15-25</div><div class="food-shop">星光夜市<br>婉泰·告庄</div></div>
       <div class="food-card"><img class="food-img" src="kaowuhua.jpg" alt="傣味烤五花" loading="lazy"><div class="food-name">傣味烤五花</div><div class="food-price">¥30-50</div><div class="food-shop">曼飞龙<br>傣味烧烤摊</div></div>
-      <div class="food-card"><img class="food-img" src="suansunyu.jpg" alt="酸笋煮鱼" loading="lazy"><div class="food-name">酸笋煮鱼</div><div class="food-price">¥35-60</div><div class="food-shop">耶德纳<br>喃呢小寨</div></div>
+      <div class="food-card"><img class="food-img" src="suansunyu.jpg" alt="酸笋煮鱼" loading="lazy"><div class="food-name">酸笋煮鱼</div><div class="food-price">¥35-60</div><div class="food-shop">傣十二四季<br>喃呢小寨</div></div>
+      <div class="food-card"><img class="food-img" src="junzihuoguo.jpg" alt="菌子火锅" loading="lazy"><div class="food-name">菌子火锅</div><div class="food-price">¥88-168</div><div class="food-shop">市区菌子火锅店<br>告庄</div></div>
+      <div class="food-card"><img class="food-img" src="youqiangxinguan.jpg" alt="油呛心管" loading="lazy"><div class="food-name">油呛心管</div><div class="food-price">¥38-58</div><div class="food-shop">傣十二四季<br>星光夜市</div></div>
       <div class="food-card"><img class="food-img" src="shuiguo.jpg" alt="青芒果蘸辣椒" loading="lazy"><div class="food-name">青芒果蘸辣椒</div><div class="food-price">¥8-15</div><div class="food-shop">夜市水果摊<br>街边</div></div>
-      <div class="food-card"><img class="food-img" src="shuaibaba.jpg" alt="缅甸甩粑粑" loading="lazy"><div class="food-name">缅甸甩粑粑</div><div class="food-price">¥10-18</div><div class="food-shop">星光夜市<br>缅甸小哥摊位</div></div>
+      <div class="food-card"><img class="food-img" src="shuaibaba.jpg" alt="巴拉哒" loading="lazy"><div class="food-name">巴拉哒</div><div class="food-price">¥10-18</div><div class="food-shop">星光夜市<br>告庄摊位</div></div>
     </div>
   </div>
 
@@ -678,12 +782,12 @@ section:last-of-type { padding-bottom:2rem; }
         <div class="tip">💡 版纳烤鸡天花板！皮脆肉嫩，配喃咪蘸水一绝</div>
       </div>
       <div class="spot-card">
-        <div class="card-tag">傣味正餐</div>
+        <div class="card-tag">云南菜正餐</div>
         <span class="icon-big">🍲</span>
-        <h4>耶德纳傣味餐厅</h4>
+        <h4>傣十二四季云南菜</h4>
         <div class="info">📍 景洪市区</div>
-        <a class="nav-link" href="https://uri.amap.com/navigation?to=100.80662,22.00292,%E6%99%AF%E6%B4%AA%E5%B8%82%E4%B8%AD%E5%BF%83&mode=car" target="_blank" rel="noopener">🧭 点击导航</a>
-        <div class="tip">💡 本地人请客首选，酸笋煮鱼+香茅草烤鱼经典</div>
+        <a class="nav-link" href="https://uri.amap.com/navigation?to=100.80662,22.00292,%E5%82%A3%E5%8D%81%E4%BA%8C%E5%9B%9B%E5%AD%A3%E4%BA%91%E5%8D%97%E8%8F%9C&mode=car" target="_blank" rel="noopener">🧭 点击导航</a>
+        <div class="tip">💡 云南菜新宠，酸笋煮鱼+油呛心管招牌，环境口味双在线</div>
       </div>
       <div class="spot-card">
         <div class="card-tag">网红咖啡</div>
@@ -694,12 +798,20 @@ section:last-of-type { padding-bottom:2rem; }
         <div class="tip">💡 老挝冰咖啡网红店，告庄逛街人手一杯</div>
       </div>
       <div class="spot-card">
-        <div class="card-tag">夜市烧烤</div>
-        <span class="icon-big">🐟</span>
-        <h4>星光夜市烧烤区</h4>
-        <div class="info">📍 告庄西双景内</div>
-        <a class="nav-link" href="https://uri.amap.com/navigation?to=100.81945,22.00921,%E5%91%8A%E5%BA%84%E6%98%9F%E5%85%89%E5%A4%9C%E5%B8%82&mode=car" target="_blank" rel="noopener">🧭 点击导航</a>
-        <div class="tip">💡 傣味烧烤聚集地，香茅草烤鱼+烤五花必点</div>
+        <div class="card-tag">本地小吃</div>
+        <span class="icon-big">🥢</span>
+        <h4>铜矿小吃</h4>
+        <div class="info">📍 景洪市区</div>
+        <a class="nav-link" href="https://uri.amap.com/navigation?to=100.80662,22.00292,%E9%93%9C%E7%9F%BF%E5%B0%8F%E5%90%83&mode=car" target="_blank" rel="noopener">🧭 点击导航</a>
+        <div class="tip">💡 本地老牌小吃店，价格实惠味道正，本地人扎堆</div>
+      </div>
+      <div class="spot-card">
+        <div class="card-tag">傣家农家乐</div>
+        <span class="icon-big">🌾</span>
+        <h4>岩保农家乐</h4>
+        <div class="info">📍 景洪周边</div>
+        <a class="nav-link" href="https://uri.amap.com/navigation?to=100.80662,22.00292,%E5%B2%A9%E4%BF%9D%E5%86%9C%E5%AE%B6%E4%B9%90&mode=car" target="_blank" rel="noopener">🧭 点击导航</a>
+        <div class="tip">💡 傣家院子现点现做，自家种的菜+散养土鸡，地道傣家饭</div>
       </div>
       <div class="spot-card">
         <div class="card-tag">小吃集合</div>
@@ -707,7 +819,7 @@ section:last-of-type { padding-bottom:2rem; }
         <h4>江边夜市小吃街</h4>
         <div class="info">📍 景洪市滨江大道</div>
         <a class="nav-link" href="https://uri.amap.com/navigation?to=100.80461,22.00955,%E6%B1%9F%E8%BE%B9%E5%A4%9C%E5%B8%82&mode=car" target="_blank" rel="noopener">🧭 点击导航</a>
-        <div class="tip">💡 舂鸡脚、青芒果蘸辣椒、缅甸甩粑粑一站式集齐</div>
+        <div class="tip">💡 舂鸡脚、青芒果蘸辣椒、巴拉哒一站式集齐</div>
       </div>
     </div>
   </div>
@@ -720,8 +832,8 @@ section:last-of-type { padding-bottom:2rem; }
     <h2 class="section-title" style="color:#2E7D32;">先看看这些，到了就知道吃啥拍啥</h2>
     <div class="gallery-grid">
       <div class="gallery-item">
-        <img src="boluofan.jpg" alt="🍍 菠萝紫米饭" loading="lazy">
-        <p>🍍 菠萝紫米饭</p>
+        <img src="boluofan.jpg" alt="🍍 菠萝饭" loading="lazy">
+        <p>🍍 菠萝饭</p>
       </div>
       <div class="gallery-item">
         <img src="kaoyu.jpg" alt="🐟 香茅草烤鱼" loading="lazy">
@@ -854,6 +966,11 @@ section:last-of-type { padding-bottom:2rem; }
       <span style="background:#E8F5E9;color:#2E7D32;font-weight:700;font-size:0.78rem;padding:0.45rem 0.9rem;border-radius:50px;">雨林徒步精品小团</span>
     </div>
 
+    <div style="text-align:center;margin:1.2rem 0 0.8rem;">
+      <img src="qrcode.png" alt="小楠微信二维码" loading="lazy" style="width:150px;height:150px;border-radius:16px;border:3px solid var(--bn-gold);box-shadow:var(--shadow-md);background:#fff;">
+      <p style="font-size:0.8rem;color:var(--bn-gray);margin-top:0.5rem;">📱 长按识别二维码 · 添加小楠微信<br><span style="font-size:0.7rem;">门票 · 包车 · 行程定制 · 免费咨询</span></p>
+    </div>
+
     <p style="text-align:center;font-size:0.85rem;color:var(--bn-gray);">📱 更多景区、娱乐项目及酒店 · 欢迎添加微信详细咨询</p>
   </div>
 </section>
@@ -873,8 +990,7 @@ section:last-of-type { padding-bottom:2rem; }
 
   <p style="color:#666;font-size:0.7rem;margin-top:1.2rem;">
     数据来源：西双版纳州文旅局 · 各景区官方信息 · 携程 · 大众点评 · 小红书<br>
-    门票价格仅供参考，以景区当日公示为准<br>
-    首版 2026.06 · 图鉴改版 2026.08 · 小楠带你游版
+    门票价格仅供参考，以景区当日公示为准
   </p>
 </div>
 
